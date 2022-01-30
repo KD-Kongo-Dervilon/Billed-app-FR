@@ -25,7 +25,7 @@ export default class NewBill {
 
 		if (validExtensions.includes(fileExtension)) {
       // add feedback for wrong file type,and accept attribute on file input to prevent user error
-			if(e.target.classList.contains('is-invalid')) {
+			if (e.target.classList.contains('is-invalid')) {
 				e.target.classList.remove('is-invalid');
 			}
 			this.firestore.storage
@@ -36,6 +36,7 @@ export default class NewBill {
 					this.fileUrl = url;
 					this.fileName = file.name;
 				});
+        // add is-invalid
 		} else {
 			e.target.classList.add('is-invalid');
 		}
