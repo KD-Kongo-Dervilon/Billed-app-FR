@@ -1,4 +1,5 @@
 import { ROUTES_PATH } from "../constants/routes.js";
+
 import Logout from "./Logout.js";
 
 export default class NewBill {
@@ -23,7 +24,8 @@ export default class NewBill {
 		const validExtensions = ['jpg', 'jpeg', 'png'];
 
 		if (validExtensions.includes(fileExtension)) {
-			if (e.target.classList.contains('is-invalid')) {
+      // add feedback for wrong file type,and accept attribute on file input to prevent user error
+			if(e.target.classList.contains('is-invalid')) {
 				e.target.classList.remove('is-invalid');
 			}
 			this.firestore.storage
