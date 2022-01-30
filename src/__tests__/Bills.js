@@ -62,6 +62,7 @@ describe('Given I am connected as an employee', () => {
 			expect(screen.getAllByText('Erreur')).toBeTruthy();
 		});
 	});
+  // when click on new bill  Button
 	describe('When I click on new bill button', () => {
 		test('Then I should go to the new bill form page', () => {
 			const html = BillsUI({ data: bills });
@@ -76,6 +77,7 @@ describe('Given I am connected as an employee', () => {
 				localStorage: window.localStorage,
 			});
 
+      // formTrigger
 			const formTrigger = jest.fn(container.handleClickNewBill);
 			const button = screen.getByTestId('btn-new-bill');
 
@@ -87,6 +89,7 @@ describe('Given I am connected as an employee', () => {
 		});
 	});
 	describe('When I click on eye icon', () => {
+    //modal
 		test('Then it should open the bill modal with corresponding content', () => {
 			$.fn.modal = jest.fn();
 			const html = BillsUI({ data: bills });
@@ -94,6 +97,7 @@ describe('Given I am connected as an employee', () => {
 			const onNavigate = (pathname) => {
 				document.body.innerHTML = ROUTES({ pathname });
 			};
+      // const container
 			const container = new Bills({
 				document,
 				onNavigate,
